@@ -4,50 +4,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta charset="utf-8"> 
         <meta name="description" content="Leaderboard of all 700+pp plays">
-        
-        
+      
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        
+		
         <link rel="icon" type="image/png" href="favicon/16x16.png" sizes="16x16">  
         <link rel="icon" type="image/png" href="favicon/32x32.png" sizes="32x32">  
         <link rel="icon" type="image/png" href="favicon/96x96.png" sizes="96x96">
-        
-        <script type="text/javascript" src="plays.json"></script>
-        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
-        <script type="text/javascript" src="script.js"></script>
     </head>
+    <style>
+        body {
+            margin: 0 auto;
+            background-color: #454545;
+            font-family: Lato;
+            color: #FFF;
+            font-size: 100%;
+        }
+
+        header {
+            background-color: #333;
+            color: #F573AD;
+            font-size: 10.6vw;
+            padding: 0.08em 0.2em 0.2em 0.2em;
+            border-bottom: 1px solid #2A2A2A;
+            text-shadow: 1px 1px 1px #000;
+        }
+
+        header span:nth-child(2) {
+            float: right;
+            font-size: 5.3vw;
+        }
+
+        @media(min-width: 450px) {
+            header {
+                font-size: 48px;
+            }
+
+            header span:nth-child(2) {
+                font-size: 24px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            color: #F573AD;
+        }
+    </style>
     <body onload="onload();">
         <header>
             <span>osu!top-plays</span>
             <span><a href="http://osu.ppy.sh/u/Poke714">Poke714</a></span>
         </header>
         
-        <div id="plays">
-            <div id="note">
-                Note: This list doesn't include maps that abuse the pp system without increasing difficulty such as <a href="https://osu.ppy.sh/s/594092">this</a> or <a href="https://osu.ppy.sh/b/847257">this</a> map.
-                <!--<a href="http://www.strawpoll.me/14260478">Should this list include multiple plays with the same player, map and mods? (eg. both of Rafis' Best FriendS plays with HD HR DT)</a>-->
-            </div>
-            
-            <a class="button" id="hideTouchscreen" onclick="filterTouchscreen()">Hide touchscreen plays</a>
-            <a class="button" id="hideUnranked" onclick="filterRanked()">Hide unranked plays</a>
-            <a class="button" id="hideOverwritten" onclick="filterOverwritten()" title="Overwritten means that there is a better play with same player, map and mods">Hide overwritten plays*</a>
-            
-            <table>
-                <thead>
-                    <th>#</th>
-                    <th class="sort" data-sort="pp">pp</th>
-                    <th class="sort" data-sort="player">Player</th>
-                    <th class="sort" data-sort="map">Map</th>
-                    <th class="sort" data-sort="mods">Mods</th>
-                    <th class="sort" data-sort="acc">Accuracy</th>
-                    <th class="sort" data-sort="rank">Rank</th>
-                    <th class="sort" data-sort="status">Status</th>
-                    <th class="sort" data-sort="date" title="YYYY/MM/DD">Date (UTC)*</th>
-                </thead>
-                <tbody class="list">
-                </tbody>
-            </table>
-        </div>
+        New URL: <a href="https://poke714.github.io/osu-topplays/">Click here</a>
     </body>
 </html>
